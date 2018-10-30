@@ -10,10 +10,12 @@ function Get-MrVHDChain {
     or more VMs (virtual machines).
  
 .PARAMETER ComputerName
-    Name of the Hyper-V host virtualization server that the specified VM's are running on.
+    Name of the Hyper-V host virtualization server that the specified VM's are running on. The default is
+    the local system.
 
 .PARAMETER Name
-    The name of the VM(s) to determine the HyperV VHD or VHDX file chain for.
+    The name of the VM(s) to determine the HyperV VHD or VHDX file chain for. The default is all VM's on
+    the specified HyperV host.
  
 .EXAMPLE
      Get-MrVHDChain -Name VM01, VM02, VM03
