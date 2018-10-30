@@ -1,5 +1,41 @@
 ﻿#Requires -Version 3.0 -Modules Hyper-V
 function Get-MrVHDChain {
+
+<#
+.SYNOPSIS
+    Gets the virtual hard disk chain associated with a virtual machine in HyperV.
+ 
+.DESCRIPTION
+    Get-MrVHDChain is an advanced function for determining the HyperV virtual disk object chain for one
+    or more VMs (virtual machines).
+ 
+.PARAMETER ComputerName
+    Name of the Hyper-V host virtualization server that the specified VM's are running on.
+
+.PARAMETER Name
+    The name of the VM(s) to determine the HyperV VHD or VHDX file chain for.
+ 
+.EXAMPLE
+     Get-MrVHDChain -Name VM01, VM02, VM03
+
+.EXAMPLE
+     Get-MrVHDChain -ComputerName Server01
+
+.EXAMPLE
+     Get-MrVHDChain -ComputerName Server01 -Name VM01, VM02
+
+.INPUTS
+    None
+ 
+.OUTPUTS
+    PSCustomObject
+ 
+.NOTES
+    Author:  Mike F Robbins
+    Website: http://mikefrobbins.com
+    Twitter: @mikefrobbins
+#>
+
     [CmdletBinding()]
     param(
         [string]$ComputerName = $env:COMPUTERNAME,
